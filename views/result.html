@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RxPIMS - Result</title>
+    <!-- Include the Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- You can also use the locally installed Tailwind CSS file -->
+    <!-- <link href="/path/to/your/tailwind.css" rel="stylesheet"> -->
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-500 p-4">
+        <div class="flex items-center">
+            <img src="imgs/logo.png" alt="Logo" class="h-8 w-8 mr-2">
+            <h1 class="text-white text-xl font-semibold">RxPIMS</h1>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-4">
+
+        <!-- Result Section -->
+        <div class="text-center">
+            <img src="uploads/<%= iName %>" alt="Uploaded Image" class="mx-auto h-80 w-80 mb-4 rounded-md shadow-lg">
+            
+            <% if (nameText) { %>
+              <h2 class="text-lg text-gray-800">Name : <%= nameText %></h2>
+            <% } else { %>
+              <h3 class="text-lg text-gray-800"><%= noName %></h3>
+            <% } %>
+            
+            <% if (idText) { %>
+              <h2 class="text-lg text-gray-800">Id : <%= idText %></h2>
+            <% } else { %>
+              <h3 class="text-lg text-gray-800"><%= noId %></h3>
+            <% } %>
+            
+            <h3 class="text-lg text-gray-800">Extracted Text:</h3>
+            <code><p class="text-sm text-gray-600"><%= extractedText %></p></code>
+        </div>
+
+    </div>
+
+</body>
+</html>
